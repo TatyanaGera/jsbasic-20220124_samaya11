@@ -6,7 +6,17 @@ export default class Cart {
   }
 
   addProduct(product) {
-    // ваш код
+    let cartItem;
+    if(this.cartItems.length == 0) {
+      cartItem = {
+        product: product,
+        count: 1
+      };
+      this.cartItems.push(cartItem);
+    }
+
+
+    this.onProductUpdate(cartItem);
   }
 
   updateProductCount(productId, amount) {
